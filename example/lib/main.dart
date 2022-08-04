@@ -17,7 +17,7 @@ Future<void> main() async {
     //await InfonlineLibrary.instance.session(IOLSessionType.szm).terminateSession();
 
     await Future.delayed(const Duration(seconds: 2));
-    await InfonlineLibrary.instance.session(IOLSessionType.szm).setCustomConsent('FF00800000');
+    await InfonlineLibrary.instance.session(IOLSessionType.szm).setCustomConsent('FF00810000');
 
     await Future.delayed(const Duration(seconds: 2));
     await InfonlineLibrary.instance.session(IOLSessionType.szm).logViewEvent(
@@ -36,7 +36,7 @@ Future<void> main() async {
     );
 
     await Future.delayed(const Duration(seconds: 2));
-    await InfonlineLibrary.instance.session(IOLSessionType.szm).setCustomConsent('FF00800000');
+    await InfonlineLibrary.instance.session(IOLSessionType.szm).setCustomConsent('FF00810000');
 
     await Future.delayed(const Duration(seconds: 2));
     await InfonlineLibrary.instance.session(IOLSessionType.szm).logViewEvent(

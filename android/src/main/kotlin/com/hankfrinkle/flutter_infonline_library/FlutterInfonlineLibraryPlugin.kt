@@ -1,5 +1,7 @@
 package com.hankfrinkle.flutter_infonline_library
 
+import android.os.Handler
+import android.os.Looper
 import android.app.Activity
 import android.content.Context
 import androidx.annotation.NonNull
@@ -59,12 +61,11 @@ class FlutterInfonlineLibraryPlugin: FlutterPlugin, MethodCallHandler, ActivityA
       "initIOLSession" -> {
         initIOLSession(
           call.argument<String>("sessionType").orEmpty(),
-          call.argument<String>("type").orEmpty(),
           call.argument<Boolean>("debug") ?: false,
           call.argument<String>("offerIdentifier").orEmpty(),
-          call.argument<String>("privacySetting").orEmpty()
+          call.argument<String>("privacySetting").orEmpty(),
+          result
         );
-        result.success(true);
       }
       "logViewEvent" -> {
         logViewEvent(
@@ -102,14 +103,16 @@ class FlutterInfonlineLibraryPlugin: FlutterPlugin, MethodCallHandler, ActivityA
 
   // Flutter API methods
 
-  private fun initIOLSession(sessionType: String, type: String, debug: Boolean, offerIdentifier: String, privacySetting: String) {
+  @Synchronized private fun initIOLSession(sessionType: String, debug: Boolean, offerIdentifier: String, privacySetting: String, @NonNull result: Result) {
+    IOLSession.init(context)
+
     defaultSession(sessionType)
       .initIOLSession(
-        context, 
         offerIdentifier, 
         debug, 
         IOLSessionPrivacySetting.valueOf(privacySetting.uppercase())
       )
+    result.success(true);
   }
 
   private fun logViewEvent(sessionType: String, type: String, category: String, comment: String?) {
@@ -118,8 +121,11 @@ class FlutterInfonlineLibraryPlugin: FlutterPlugin, MethodCallHandler, ActivityA
     defaultSession(sessionType).logEvent(event)
   }
 
-  private fun setCustomConsent(sessionType: String, consent: String) {
-    defaultSession(sessionType).setCustomConsent(consent)
+  private fun setCustomConsent(sessionType: String, consent: String) { 
+    // Fix session crash
+    Handler(Looper.getMainLooper()).postDelayed({
+      defaultSession(sessionType).setCustomConsent(consent)
+    }, 350)
   }
 
   private fun sendLoggedEvents(sessionType: String) {
