@@ -20,6 +20,7 @@ A new Flutter plugin project.
   }
   s.dependency 'Flutter'
   s.platform = :ios, '11.0'
+  #s.script_phase = { :name => 'Script Run INFOnline', :script => '"INFOnlineLibrary/copy-framework.sh"', :execution_position => :before_compile, :shell_path => '/bin/sh' }
 
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 
