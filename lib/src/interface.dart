@@ -3,7 +3,7 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 import 'channel.dart';
 
 enum IOLViewEventType {
-  appeared, 
+  appeared,
   refreshed,
   disappeared
 }
@@ -88,7 +88,7 @@ abstract class InfonlineLibrarySession {
 }
 
 abstract class InfonlineLibraryPlatformSessionIOS {
-  /// IOMp: IOMp/SZM (INFOnline Pseudonyme Library iOS) 
+  /// IOMp: IOMp/SZM (INFOnline Pseudonyme Library iOS)
   Future<void> startSession({ required String offerIdentifier, required IOLPrivacyType type, String? hybridIdentifier, String? customerData}) async {
     throw UnimplementedError('startIOMpSession() has not been implemented.');
   }
@@ -103,7 +103,7 @@ abstract class InfonlineLibraryPlatformIOS {
 }
 
 abstract class InfonlineLibraryPlatformSessionAndroid {
-  /// IOMp: IOMp/SZM (INFOnline Pseudonyme Library iOS) 
+  /// IOMp: IOMp/SZM (INFOnline Pseudonyme Library iOS)
   Future<void> initIOLSession({required String offerIdentifier, required bool debug, required IOLPrivacyType type}) async {
     throw UnimplementedError('initIOLSession() has not been implemented.');
   }

@@ -30,12 +30,12 @@ class FlutterInfonlineLibraryPlugin: FlutterPlugin, MethodCallHandler, ActivityA
   private lateinit var context : Context
   private lateinit var activity : Activity
 
-  override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {    
+  override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
     channel = MethodChannel(flutterPluginBinding.binaryMessenger, "flutter_infonline_library")
     channel.setMethodCallHandler(this)
     this.context = flutterPluginBinding.applicationContext
   }
-  
+
   companion object {
     @JvmStatic
     fun registerWith(registrar: Registrar) {
@@ -108,8 +108,8 @@ class FlutterInfonlineLibraryPlugin: FlutterPlugin, MethodCallHandler, ActivityA
 
     defaultSession(sessionType)
       .initIOLSession(
-        offerIdentifier, 
-        debug, 
+        offerIdentifier,
+        debug,
         IOLSessionPrivacySetting.valueOf(privacySetting.uppercase())
       )
     result.success(true);
@@ -121,11 +121,13 @@ class FlutterInfonlineLibraryPlugin: FlutterPlugin, MethodCallHandler, ActivityA
     defaultSession(sessionType).logEvent(event)
   }
 
-  private fun setCustomConsent(sessionType: String, consent: String) { 
+  private fun setCustomConsent(sessionType: String, consent: String) {
     // Fix session crash
-    Handler(Looper.getMainLooper()).postDelayed({
-      defaultSession(sessionType).setCustomConsent(consent)
-    }, 350)
+    try {
+      Handler(Looper.getMainLooper()).postDelayed({
+        defaultSession(sessionType).setCustomConsent(consent)
+      }, 500)
+    } catch (IOException e) {}
   }
 
   private fun sendLoggedEvents(sessionType: String) {

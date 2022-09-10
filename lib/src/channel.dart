@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 import 'interface.dart';
@@ -25,7 +24,6 @@ class MethodChannelFlutterInfonlineLibrarySession extends InfonlineLibrarySessio
   MethodChannelFlutterInfonlineLibrarySession(IOLSessionType sessionType) : super(sessionType);
 
   /// The method channel used to interact with the native platform.
-  @visibleForTesting
   final methodChannel = const MethodChannel('flutter_infonline_library');
 
   @override
@@ -43,7 +41,7 @@ class MethodChannelFlutterInfonlineLibrarySession extends InfonlineLibrarySessio
     await methodChannel.invokeMethod<void>('logViewEvent', args);
   }
 
-  @override 
+  @override
   Future<void> setCustomConsent(String consent) async {
     Map<String, dynamic> args = <String, dynamic>{};
     args.putIfAbsent('sessionType', () => InfonlineLibraryHelpers.enumToString(sessionType));
@@ -73,7 +71,7 @@ class PlatformSessionIOS extends InfonlineLibraryPlatformSessionIOS {
 
   @override
   Future<void> startSession({required String offerIdentifier, required IOLPrivacyType type, String? hybridIdentifier, String? customerData}) async {
-    Map<String, dynamic> args = <String, dynamic>{};    
+    Map<String, dynamic> args = <String, dynamic>{};
     args.putIfAbsent('sessionType', () => InfonlineLibraryHelpers.enumToString(_mainLib.sessionType));
     args.putIfAbsent('offerIdentifier', () => offerIdentifier);
     args.putIfAbsent('type', () => InfonlineLibraryHelpers.enumToString(type));
@@ -111,7 +109,7 @@ class PlatformSessionAndroid extends InfonlineLibraryPlatformSessionAndroid {
 
   @override
   Future<void> initIOLSession({required String offerIdentifier, required bool debug, required IOLPrivacyType type}) async {
-    Map<String, dynamic> args = <String, dynamic>{};    
+    Map<String, dynamic> args = <String, dynamic>{};
     args.putIfAbsent('sessionType', () => InfonlineLibraryHelpers.enumToString(_mainLib.sessionType));
     args.putIfAbsent('privacySetting', () => InfonlineLibraryHelpers.enumToString(type));
     args.putIfAbsent('offerIdentifier', () => offerIdentifier);
