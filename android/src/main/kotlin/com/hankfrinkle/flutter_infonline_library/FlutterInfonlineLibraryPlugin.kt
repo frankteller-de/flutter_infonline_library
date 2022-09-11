@@ -127,7 +127,7 @@ class FlutterInfonlineLibraryPlugin: FlutterPlugin, MethodCallHandler, ActivityA
       Handler(Looper.getMainLooper()).postDelayed({
         defaultSession(sessionType).setCustomConsent(consent)
       }, 500)
-    } catch (IOException e) {}
+    } finally {}
   }
 
   private fun sendLoggedEvents(sessionType: String) {
