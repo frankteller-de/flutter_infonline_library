@@ -69,7 +69,7 @@ flutter {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     // INFOnline Library benötigt die Mobile Ads API der Google Play Services Library
-    implementation 'com.google.android.gms:play-services-ads:11.8.0'
+    implementation 'com.google.android.gms:play-services-ads:21.5.0'
     // Die INFONline Library verlinken
-    implementation 'de.infonline.lib:infonlinelib_2.3.1@aar'
+    implementation 'de.infonline.lib:infonlinelib_2.3.2@aar'
 }
