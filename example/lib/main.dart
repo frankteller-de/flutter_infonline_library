@@ -8,7 +8,7 @@ Future<void> main() async {
 
   if (Platform.isAndroid) {
     await InfonlineLibrary.instance.android.setDebugModeEnabled(true);
-  
+
     await InfonlineLibrary.instance.session(IOLSessionType.szm).android.initIOLSession(
       offerIdentifier: '<yourIdentifier>', debug: true, type: IOLPrivacyType.ack
     );
