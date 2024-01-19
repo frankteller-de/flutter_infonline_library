@@ -113,6 +113,6 @@ public class SwiftFlutterInfonlineLibraryPlugin: NSObject, FlutterPlugin {
   }
 
   private func stringToEnumValue(_ value: String, values: [String]) -> UInt {
-      return UInt(values.firstIndex(where: {$0 == value}) ?? 0)
+      return UInt(values.firstIndex(where: {$0 == value.uppercased()}) ?? 0)
   }
 }
