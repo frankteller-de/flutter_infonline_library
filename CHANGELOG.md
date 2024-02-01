@@ -1,4 +1,4 @@
-## 0.9.3+12
+## 0.9.4+12
 * Enum Fix by @KevinHaendel
 * Upgrade to major-versions
 
