@@ -21,7 +21,7 @@ class InfonlineLibraryHelpers {
 /// An implementation of [InfonlineLibrary] that uses method channels.
 class MethodChannelFlutterInfonlineLibrarySession extends InfonlineLibrarySession {
   /// Session type constructor
-  MethodChannelFlutterInfonlineLibrarySession(IOLSessionType sessionType) : super(sessionType);
+  MethodChannelFlutterInfonlineLibrarySession(super.sessionType);
 
   /// The method channel used to interact with the native platform.
   final methodChannel = const MethodChannel('flutter_infonline_library');
