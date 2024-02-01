@@ -11,7 +11,7 @@ public class SwiftFlutterInfonlineLibraryPlugin: NSObject, FlutterPlugin {
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
     let arguments = call.arguments as? NSDictionary
-      
+
     switch call.method {
       case "startIOMpSession":
         startIOMpSession(
@@ -31,7 +31,7 @@ public class SwiftFlutterInfonlineLibraryPlugin: NSObject, FlutterPlugin {
           comment: arguments!["comment"] as? String
         )
         result(true)
-        break     
+        break
       case "setCustomConsent":
         setCustomConsent(
           sessionType: arguments!["sessionType"] as! String,
@@ -65,9 +65,9 @@ public class SwiftFlutterInfonlineLibraryPlugin: NSObject, FlutterPlugin {
   private func startIOMpSession(sessionType: String, type: String, offerIdentifier: String, hybridIdentifier: String?, customerData: String?) {
     let types = ["ack","lin","pio"]
     defaultSession(sessionType).start(
-      withOfferIdentifier: offerIdentifier, 
-      privacyType: IOLPrivacyType(rawValue: stringToEnumValue(type, values: types))!, 
-      hybridIdentifier: hybridIdentifier, 
+      withOfferIdentifier: offerIdentifier,
+      privacyType: IOLPrivacyType(rawValue: stringToEnumValue(type, values: types))!,
+      hybridIdentifier: hybridIdentifier,
       customerData: customerData
     )
   }
@@ -94,7 +94,7 @@ public class SwiftFlutterInfonlineLibraryPlugin: NSObject, FlutterPlugin {
   private func mostRecentLogs(_ limit: UInt) -> [String] {
     return IOLLogging.mostRecentLogs(withLimit: limit)
   }
-  
+
   private func setDebugLogLevel(_ level: String) {
     let levels = ["off","error","warning","info","trace"]
     let level = IOLDebugLevel(rawValue: stringToEnumValue(level, values: levels))!
