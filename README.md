@@ -53,7 +53,7 @@ ios/INFOnlineLibrary
 Download the Android INFOnline library and copy the *.aar file into the follow folder in your project.
 
 ```bash
-android/app/libs/infonlinelib_2.3.1.aar
+android/app/libs/infonlinelib_2.4.0.aar
 ```
 
 Now open the ``android/app/build.gradle`` file and make sure your SDK version is >= 19.

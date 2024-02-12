@@ -2,14 +2,14 @@ group 'com.hankfrinkle.flutter_infonline_library'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.6.10'
+    ext.kotlin_version = '1.9.22'
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.2'
+        classpath 'com.android.tools.build:gradle:8.2.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -30,7 +30,9 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 31
+    ndkVersion "25.1.8937393"
+    compileSdkVersion 34
+    namespace "com.hankfrinkle.flutter_infonline_library"
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -47,7 +49,7 @@ android {
 
     defaultConfig {
         minSdkVersion 26
-        targetSdkVersion 30
+        targetSdkVersion 34
     }
 }
 
@@ -58,5 +60,5 @@ dependencies {
     // INFOnline Library benötigt die Mobile Ads API der Google Play Services Library
     implementation 'com.google.android.gms:play-services-ads:21.5.0'
     // Die INFONline Library verlinken
-    implementation 'de.infonline.lib:infonlinelib_2.3.2@aar'
+    implementation 'de.infonline.lib:infonlinelib_2.4.0@aar'
 }

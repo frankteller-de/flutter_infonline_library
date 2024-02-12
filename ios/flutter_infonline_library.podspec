@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'flutter_infonline_library'
-  s.version          = '0.9.0'
+  s.version          = '0.10.5'
   s.summary          = 'A new Flutter plugin project.'
   s.description      = <<-DESC
 A new Flutter plugin project.
@@ -15,18 +15,18 @@ A new Flutter plugin project.
   s.source           = { :path => '.' }
   s.source_files     = 'Classes/**/*'
   s.xcconfig         = {
-    'FRAMEWORK_SEARCH_PATHS' => '"$(PROJECT_DIR)/INFOnlineLibrary/$(PLATFORM_NAME)/"',
-    'OTHER_LDFLAGS' => '-framework INFOnlineLibrary'
+    'FRAMEWORK_SEARCH_PATHS' => '"$(PROJECT_DIR)/INFOnlineLibrary.xcframework/$(PLATFORM_NAME)/"',
+    'OTHER_LDFLAGS' => '-framework INFOnlineLibrary.xcframework'
   }
   s.dependency 'Flutter'
   s.platform = :ios, '11.0'
   #s.script_phase = { :name => 'Script Run INFOnline', :script => '"INFOnlineLibrary/copy-framework.sh"', :execution_position => :before_compile, :shell_path => '/bin/sh' }
 
   # Flutter.framework does not contain a i386 slice.
-  s.pod_target_xcconfig = { 
-    'DEFINES_MODULE' => 'YES', 
+  s.pod_target_xcconfig = {
+    'DEFINES_MODULE' => 'YES',
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64',
-    'FRAMEWORK_SEARCH_PATHS' => '"$(PROJECT_DIR)/../INFOnlineLibrary/$(PLATFORM_NAME)/"',
+    'FRAMEWORK_SEARCH_PATHS' => '"$(PROJECT_DIR)/../INFOnlineLibrary.xcframework/$(PLATFORM_NAME)/"',
 }
   s.swift_version = '5.0'
 end
