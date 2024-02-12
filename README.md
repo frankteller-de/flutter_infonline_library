@@ -62,7 +62,7 @@ Now open the ``android/app/build.gradle`` file and make sure your SDK version is
 android {
   defaultConfig {
     minSdkVersion 26
-    targetSdkVersion 30
+    targetSdkVersion 34
   }
 }
 ```
