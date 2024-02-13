@@ -15,8 +15,8 @@ A new Flutter plugin project.
   s.source           = { :path => '.' }
   s.source_files     = 'Classes/**/*'
   s.xcconfig         = {
-    'FRAMEWORK_SEARCH_PATHS' => '"$(PROJECT_DIR)/INFOnlineLibrary.xcframework/$(PLATFORM_NAME)/"',
-    'OTHER_LDFLAGS' => '-framework INFOnlineLibrary.xcframework'
+    'FRAMEWORK_SEARCH_PATHS' => '"$(PROJECT_DIR)/INFOnlineLibrary/$(PLATFORM_NAME)/"',
+    'OTHER_LDFLAGS' => '-framework INFOnlineLibrary'
   }
   s.dependency 'Flutter'
   s.platform = :ios, '11.0'
@@ -26,7 +26,7 @@ A new Flutter plugin project.
   s.pod_target_xcconfig = {
     'DEFINES_MODULE' => 'YES',
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64',
-    'FRAMEWORK_SEARCH_PATHS' => '"$(PROJECT_DIR)/../INFOnlineLibrary.xcframework/$(PLATFORM_NAME)/"',
+    'FRAMEWORK_SEARCH_PATHS' => '"$(PROJECT_DIR)/../INFOnlineLibrary/$(PLATFORM_NAME)/"',
 }
   s.swift_version = '5.0'
 end
