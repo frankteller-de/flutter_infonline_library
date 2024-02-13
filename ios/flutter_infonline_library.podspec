@@ -23,8 +23,8 @@ A new Flutter plugin project.
   #s.script_phase = { :name => 'Script Run INFOnline', :script => '"INFOnlineLibrary/copy-framework.sh"', :execution_position => :before_compile, :shell_path => '/bin/sh' }
 
   # Flutter.framework does not contain a i386 slice.
-  s.pod_target_xcconfig = { 
-    'DEFINES_MODULE' => 'YES', 
+  s.pod_target_xcconfig = {
+    'DEFINES_MODULE' => 'YES',
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64',
     'FRAMEWORK_SEARCH_PATHS' => '"$(PROJECT_DIR)/../INFOnlineLibrary/$(PLATFORM_NAME)/"',
 }
