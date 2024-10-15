@@ -1,3 +1,6 @@
+## 0.11.15
+* iOS Lib embedded
+
 ## 0.10.7+17
 * Bugfixes
 

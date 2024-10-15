@@ -1,6 +1,6 @@
 PODS:
   - Flutter (1.0.0)
-  - flutter_infonline_library (0.10.5):
+  - flutter_infonline_library (0.11.14):
     - Flutter
 
 DEPENDENCIES:
@@ -15,8 +15,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  flutter_infonline_library: 1b854f6233f4772c827fadceb5d91dad4acefa72
+  flutter_infonline_library: 3d1ebb2eaff7b2ce227a8bb0af87180a3a4e0450
 
-PODFILE CHECKSUM: 4e8f8b2be68aeea4c0d5beb6ff1e79fface1d048
+PODFILE CHECKSUM: bd295fc198b245bb51189c8140d55e735c8dd822
 
-COCOAPODS: 1.15.0
+COCOAPODS: 1.15.2

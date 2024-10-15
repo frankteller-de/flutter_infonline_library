@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'flutter_infonline_library'
-  s.version          = '0.11.14'
+  s.version          = '0.11.15'
   s.summary          = 'Unoffical INFOnline Flutter Library'
   s.description      = <<-DESC
 Unoffical INFOnline Flutter Library Android/iOS (Pseudonyme Messung SZM/ÖWA)
