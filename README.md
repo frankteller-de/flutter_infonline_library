@@ -31,29 +31,19 @@ You will get the native iOS and Android libraries via email from INFOnline Suppo
 Add `flutter_infonline_library` as a [dependency in your pubspec.yaml file](https://flutter.io/using-packages/).
 
 ### iOS
-Open ``ios/Podfile`` in your project. Make sure platform is uncommented and has a minimum version of 11.
+The iOS INFOnline library v.2.7.0 is now embedded.
+
+Just open ``ios/Podfile`` in your project and make sure platform is uncommented and has a minimum version of 13.
 
 ```bash
-platform :ios, '11.0'
-```
-
-Open XCode and add a new Run Script under "Bild Phases".
-
-```bash
-$PROJECT_DIR/INFOnlineLibrary/copy-framework.sh
-```
-
-Finally, download the iOS INFOnline library and copy the source folder to your iOS project folder.
-
-```bash
-ios/INFOnlineLibrary
+platform :ios, '13.0'
 ```
 
 ### Android
 Download the Android INFOnline library and copy the *.aar file into the follow folder in your project.
 
 ```bash
-android/app/libs/infonlinelib_2.4.0.aar
+android/app/libs/infonlinelib_2.5.0.aar
 ```
 
 Now open the ``android/app/build.gradle`` file and make sure your SDK version is >= 19.

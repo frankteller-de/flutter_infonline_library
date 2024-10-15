@@ -4,29 +4,32 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'flutter_infonline_library'
-  s.version          = '0.10.5'
-  s.summary          = 'A new Flutter plugin project.'
+  s.version          = '0.11.14'
+  s.summary          = 'Unoffical INFOnline Flutter Library'
   s.description      = <<-DESC
-A new Flutter plugin project.
+Unoffical INFOnline Flutter Library Android/iOS (Pseudonyme Messung SZM/ÖWA)
                        DESC
   s.homepage         = 'http://example.com'
+  s.license          = { :type => 'MIT', :file => '../LICENSE' }
   s.license          = { :file => '../LICENSE' }
-  s.author           = { 'Frank Hinkel' => 'email@example.com' }
+  s.author           = { 'Frank Teller' => 'email@example.com' }
   s.source           = { :path => '.' }
   s.source_files     = 'Classes/**/*'
-  s.xcconfig         = {
-    'FRAMEWORK_SEARCH_PATHS' => '"$(PROJECT_DIR)/INFOnlineLibrary/$(PLATFORM_NAME)/"',
-    'OTHER_LDFLAGS' => '-framework INFOnlineLibrary'
-  }
+
+  s.vendored_frameworks = 'Frameworks/INFOnlineLibrary.xcframework'
+
   s.dependency 'Flutter'
-  s.platform = :ios, '11.0'
-  #s.script_phase = { :name => 'Script Run INFOnline', :script => '"INFOnlineLibrary/copy-framework.sh"', :execution_position => :before_compile, :shell_path => '/bin/sh' }
+  s.platform = :ios, '12.0'
 
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = {
+    'ENABLE_BITCODE' => 'NO',
     'DEFINES_MODULE' => 'YES',
-    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64',
-    'FRAMEWORK_SEARCH_PATHS' => '"$(PROJECT_DIR)/../INFOnlineLibrary/$(PLATFORM_NAME)/"',
-}
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386'
+  }
+
   s.swift_version = '5.0'
 end
+
+
+
