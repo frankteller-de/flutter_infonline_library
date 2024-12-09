@@ -75,5 +75,5 @@ dependencies {
     // INFOnline Library benötigt die Mobile Ads API der Google Play Services Library
     implementation 'com.google.android.gms:play-services-ads:22.6.0'
     // Die INFONline Library verlinken
-    implementation 'de.infonline.lib:infonlinelib_2.4.0@aar'
+    implementation 'de.infonline.lib:infonlinelib_2.5.0@aar'
 }
