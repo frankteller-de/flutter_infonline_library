@@ -1,3 +1,6 @@
+## 0.11.17
+* Registrar fix
+
 ## 0.11.16
 * de.infonline.lib upgraded to infonlinelib_2.5.0.aar
 
