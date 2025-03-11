@@ -20,7 +20,7 @@ If you are interested in census measurements look at [flutter\_iomb_library](htt
 ## Requirements
 - Dart sdk: `>=2.17.6 <4.0.0`
 - Flutter: `>=2.5.0`
-- Android: `minSdkVersion 19`
+- Android: `minSdkVersion 21`
 - iOS: `minSdkVersion 11`
 - native iOS and Android INFOnline libraries
 
@@ -51,7 +51,7 @@ Now open the ``android/app/build.gradle`` file and make sure your SDK version is
 ```bash
 android {
   defaultConfig {
-    minSdkVersion 26
+    minSdkVersion 21
     targetSdkVersion 33
   }
 }

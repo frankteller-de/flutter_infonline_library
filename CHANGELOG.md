@@ -1,3 +1,6 @@
+## 0.13.0
+* Upgrade gradle version to 1.8.20
+
 ## 0.12.0
 * Upgrade gradle version to 1.8.0
 
