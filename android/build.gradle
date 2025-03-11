@@ -2,7 +2,7 @@ group 'com.hankfrinkle.flutter_infonline_library'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.7.10'
+    ext.kotlin_version = '1.8.20'
     repositories {
         google()
         mavenCentral()
@@ -24,7 +24,7 @@ rootProject.allprojects {
     }
 }
 
-println  "Root project:   ${project.rootDir}";
+println  "Root project:   ${project.rootDir}"
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'

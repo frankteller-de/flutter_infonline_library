@@ -1,3 +1,6 @@
+## 0.12.0
+* Upgrade gradle version to 1.8.0
+
 ## 0.11.17
 * Registrar fix
 
