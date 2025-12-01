@@ -57,7 +57,7 @@ dependencies {
     // Fix crash in INFOnline Library
     implementation 'androidx.preference:preference-ktx:1.1.1'
     // INFOnline Library requires only the advertisement identifier
-    implementation 'com.google.android.gms:play-services-ads-identifier:18.2.0'
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.1.0'
     // Link the INFOnline Library
     implementation 'de.infonline.lib:infonlinelib_2.5.0@aar'
 }
