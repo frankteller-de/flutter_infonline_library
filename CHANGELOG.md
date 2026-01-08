@@ -1,3 +1,6 @@
+## 0.13.1
+* Downgrade ads-id to 18.1.0 for better compatibility
+
 ## 0.13.0
 * Upgrade gradle version to 1.8.20
 
