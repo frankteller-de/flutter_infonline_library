@@ -56,8 +56,8 @@ dependencies {
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version'
     // Fix crash in INFOnline Library
     implementation 'androidx.preference:preference-ktx:1.1.1'
-    // INFOnline Library benötigt die Mobile Ads API der Google Play Services Library
-    implementation 'com.google.android.gms:play-services-ads:21.5.0'
-    // Die INFONline Library verlinken
+    // INFOnline Library requires only the advertisement identifier
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.1.0'
+    // Link the INFOnline Library
     implementation 'de.infonline.lib:infonlinelib_2.5.0@aar'
 }
