@@ -2,6 +2,10 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        flatDir {
+            dirs rootProject.file('app/libs')
+            content { includeModule('de.infonline.lib', 'infonlinelib_2.5.0') }
+        }
     }
 }
 

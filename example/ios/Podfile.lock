@@ -1,22 +1,16 @@
 PODS:
   - Flutter (1.0.0)
-  - flutter_infonline_library (0.11.16):
-    - Flutter
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
-  - flutter_infonline_library (from `.symlinks/plugins/flutter_infonline_library/ios`)
 
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
-  flutter_infonline_library:
-    :path: ".symlinks/plugins/flutter_infonline_library/ios"
 
 SPEC CHECKSUMS:
-  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  flutter_infonline_library: b640ce100f33a73a4bcaef8cb8af9674939546b1
+  Flutter: 71a624a5bc0c04062bf19101d501e466baf2fb47
 
-PODFILE CHECKSUM: 13c8060114aebcc06454a991a9a6a3ff96343e2c
+PODFILE CHECKSUM: 57c8aed26fba39d3ec9424816221f294a07c58eb
 
 COCOAPODS: 1.16.2

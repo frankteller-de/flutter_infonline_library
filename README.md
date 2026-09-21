@@ -18,57 +18,43 @@ If you are interested in census measurements look at [flutter\_iomb_library](htt
 * IOMb/Census (IOMb Library iOS/Android)
 
 ## Requirements
-- Dart sdk: `>=2.17.6 <4.0.0`
-- Flutter: `>=2.5.0`
-- Android: `minSdkVersion 21`
-- iOS: `minSdkVersion 11`
-- native iOS and Android INFOnline libraries
 
-You will get the native iOS and Android libraries via email from INFOnline Support. The native libraries are not public!
+Flutter >=3.44 / Dart >=3.12, Java 17, Android API 21+, and iOS 13+.
+The consuming Flutter SDK may require higher OS versions (Flutter 3.47: API 24 / iOS 15).
+The Dart API is unchanged; older Flutter projects must use the previous release line.
+Examples use Flutter 3.47, AGP 9.1 / Gradle 9.3.1, and iOS 15.
 
 ## Configuration
 
-Add `flutter_infonline_library` as a [dependency in your pubspec.yaml file](https://flutter.io/using-packages/).
-
 ### iOS
-The iOS INFOnline library v.2.7.0 is now embedded.
 
-Just open ``ios/Podfile`` in your project and make sure platform is uncommented and has a minimum version of 13.
-
-```bash
-platform :ios, '13.0'
-```
+Swift Package Manager (default in Flutter 3.44+) and CocoaPods share the same Swift source.
+INFOnlineLibrary 2.7.0 and its privacy manifests are bundled for both package managers.
+Do not manually link another copy of the framework.
 
 ### Android
-Download the Android INFOnline library and copy the *.aar file into the follow folder in your project.
 
-```bash
-android/app/libs/infonlinelib_2.5.0.aar
-```
+Place the vendor's [`infonlinelib_2.5.0.aar`](https://github.com/INFOnline-sg/libs-appsensor-iomp-android) in `android/app/libs`.
+Add this repository to the app's `allprojects.repositories` (or equivalent settings repositories):
 
-Now open the ``android/app/build.gradle`` file and make sure your SDK version is >= 19.
-
-```bash
-android {
-  defaultConfig {
-    minSdkVersion 21
-    targetSdkVersion 33
-  }
+```groovy
+flatDir {
+    dirs rootProject.file('app/libs')
+    content { includeModule('de.infonline.lib', 'infonlinelib_2.5.0') }
 }
 ```
 
-Add your Ad Manager app ID (identified in the Ad Manager UI) to your app's AndroidManifest.xml file.
+The plugin supplies Ads Identifier 18.1.0 and Google Play Services Base 18.5.0.
+Base is required by the vendor's direct `GoogleApiAvailability` calls; apps do not need to add it separately.
+These versions retain API 21 support, and Gradle can resolve compatible newer versions required by other app dependencies.
+The full Google Mobile Ads SDK is not included, so this plugin does not require a Mobile Ads application ID.
 
-```bash
-<manifest>
-    <application>
-        <!-- Sample Ad Manager app ID: ca-app-pub-3940256099942544~3347511713 -->
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-xxxxxxxxxxxxxxxx~yyyyyyyyyy"/>
-    </application>
-</manifest>
-```
+### Android tooling
+
+The plugin uses `kotlin.compilerOptions` and lets Flutter provide Kotlin integration.
+Flutter 3.44 supports the legacy Kotlin setup; Flutter 3.47 / AGP 9 supports built-in Kotlin.
+Enable `android.builtInKotlin=true` only after all app plugins support it, and retain Flutter's `android.newDsl=false` setting.
+See the example for configuration. Validate a minified release build with your vendor credentials and measurement identifiers.
 
 # Usage
 Simple example to test the plugin in your project.

@@ -2,10 +2,10 @@ import Flutter
 import UIKit
 import INFOnlineLibrary
 
-public class SwiftFlutterInfonlineLibraryPlugin: NSObject, FlutterPlugin {
+public class FlutterInfonlineLibraryPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "flutter_infonline_library", binaryMessenger: registrar.messenger())
-    let instance = SwiftFlutterInfonlineLibraryPlugin()
+    let instance = FlutterInfonlineLibraryPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 
