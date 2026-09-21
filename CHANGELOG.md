@@ -1,3 +1,13 @@
+## 0.14.0
+
+* **Breaking:** requires Flutter 3.44 / Dart 3.12 or newer, iOS 13+, and Android API 21+ (or the consuming Flutter SDK's higher minimum).
+* Supports Swift Package Manager and CocoaPods using shared Swift sources.
+* Migrates Android to the compilerOptions DSL and Java 17, compatible with Flutter's built-in Kotlin integration.
+* Keeps the Dart API and vendor SDK versions unchanged.
+* Updates the examples to Flutter 3.47+, iOS 15+, and AGP 9 with built-in Kotlin enabled.
+* Declares Google Play Services Base directly so clean consumers satisfy the vendor SDK and R8 without app-level Google dependencies.
+* Android repository configuration now belongs to the consuming app; configure the licensed INFOnline AAR repository as documented.
+
 ## 0.13.1
 * Downgrade ads-id to 18.1.0 for better compatibility
 

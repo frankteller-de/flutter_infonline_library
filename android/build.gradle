@@ -2,62 +2,45 @@ group 'com.hankfrinkle.flutter_infonline_library'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.8.20'
+    ext.kotlin_version = '2.2.20'
     repositories {
         google()
         mavenCentral()
     }
-
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.4.0'
+        classpath 'com.android.tools.build:gradle:8.12.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
-rootProject.allprojects {
-    repositories {
-        google()
-        mavenCentral()
-        flatDir {
-            dirs "${project.rootDir}/app/libs"
-        }
-    }
-}
-
-println  "Root project:   ${project.rootDir}"
-
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 33
     namespace 'com.hankfrinkle.flutter_infonline_library'
+    compileSdk 36
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 33
+        minSdk 21
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
     }
 }
 
 dependencies {
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version'
-    // Fix crash in INFOnline Library
+    // Required by the vendor SDK when accessing preferences and the advertising ID.
     implementation 'androidx.preference:preference-ktx:1.1.1'
-    // INFOnline Library requires only the advertisement identifier
     implementation 'com.google.android.gms:play-services-ads-identifier:18.1.0'
-    // Link the INFOnline Library
+    // The vendor calls GoogleApiAvailability directly; retain API 21 support.
+    implementation 'com.google.android.gms:play-services-base:18.5.0'
+    // The consuming app supplies this licensed AAR through its repositories.
     implementation 'de.infonline.lib:infonlinelib_2.5.0@aar'
 }
