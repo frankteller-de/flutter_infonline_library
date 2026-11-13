@@ -1,3 +1,7 @@
+## Unreleased
+
+* Retains the Android ÖWA and SZM default configuration resources in builds with resource shrinking enabled.
+
 ## 0.14.0
 
 * **Breaking:** requires Flutter 3.44 / Dart 3.12 or newer, iOS 13+, and Android API 21+ (or the consuming Flutter SDK's higher minimum).
