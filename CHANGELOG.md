@@ -1,4 +1,4 @@
-## Unreleased
+## 0.14.1
 
 * Retains the Android ÖWA and SZM default configuration resources in builds with resource shrinking enabled.
 

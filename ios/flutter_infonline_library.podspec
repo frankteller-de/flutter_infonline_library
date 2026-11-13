@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'flutter_infonline_library'
-  s.version = '0.14.0'
+  s.version = '0.14.1'
   s.summary = 'Flutter integration for the INFOnline pseudonymous measurement SDK.'
   s.homepage = 'https://github.com/codeforce-dev/flutter_infonline_library'
   s.license = { :file => '../LICENSE' }
