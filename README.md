@@ -49,6 +49,13 @@ Base is required by the vendor's direct `GoogleApiAvailability` calls; apps do n
 These versions retain API 21 support, and Gradle can resolve compatible newer versions required by other app dependencies.
 The full Google Mobile Ads SDK is not included, so this plugin does not require a Mobile Ads application ID.
 
+The plugin keeps the vendor's `oewa_infonline_lib_config` and
+`szm_infonline_lib_config` raw resources in optimized release builds. IOLib 2.5.0
+looks these default configurations up by name with `Resources.getIdentifier`, so
+resource shrinking must retain both supported measurement systems' configurations.
+The package supplies a uniquely named resource keep file; consuming apps can
+keep code and resource shrinking enabled.
+
 ### Android tooling
 
 The plugin uses `kotlin.compilerOptions` and lets Flutter provide Kotlin integration.

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- IOLib resolves its default configuration by session-specific name with getIdentifier(). -->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@raw/oewa_infonline_lib_config,@raw/szm_infonline_lib_config" />
